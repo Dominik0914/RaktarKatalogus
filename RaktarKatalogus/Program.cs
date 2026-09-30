@@ -1,4 +1,5 @@
 ﻿using RaktarKatalogus;
+using System.Diagnostics.CodeAnalysis;
 
 
 List<Termek> osszes = new List<Termek>();
@@ -14,5 +15,13 @@ for (int i=0;i<3;i++)
     Console.Write("\tRaktárkészlet (db): ");
     ujTermek.Mennyiseg = int.Parse(Console.ReadLine());
     osszes.Add(ujTermek);
+}//4.feladat
+double teljesertek = 0;
+double atlag = 0;
+int osszdb = 0;
+foreach (Termek t in osszes)
+{
+    teljesertek += t.Ar * t.Mennyiseg;
+        osszdb += t.Mennyiseg;
 }
-Console.WriteLine(osszes.Count);
+atlag = teljesertek / osszdb;
